@@ -1,0 +1,16 @@
+<Project>
+	<Import Project="../Common.props" />
+	<Import Project="../CommonNullable.props" />
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>$(ProjectDir)../../test_output</OutputPath>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+		<PackageReference Include="JunitXml.TestLogger" Version="2.1.32" />
+		<PackageReference Include="xunit" Version="2.4.1" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+		<ProjectReference Include="$(ProjectDir)../$(MSBuildProjectName.Substring(7))/$(MSBuildProjectName.Substring(7)).csproj" />
+	</ItemGroup>
+</Project>
